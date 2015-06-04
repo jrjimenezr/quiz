@@ -1,6 +1,29 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #FFFFFF;
+  color: #491057;
+  font-size: 1em;
+  margin: 1em;;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0em;
+  text-algin: center;
+}
+
+.caja {
+  background-color: #F3D8FA;
+  color: #491057;
+  border: 0.1em solid #491057;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em 0.5em rgba(73, 16, 87, 0.3);
+  padding: 1.5em 2em;
+  margin: 1em;
 }
 
 a {
