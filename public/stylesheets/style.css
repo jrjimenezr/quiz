@@ -33,7 +33,7 @@ h2 {
   border: 0.1em solid #044085;
 }
 
-.caja  {
+.caja, #footer  {
   background-color: #F3D8FA;
   color: #491057;
   border: 0.1em solid #491057;
@@ -61,6 +61,41 @@ h2 {
   text-align: center;
 }
 
-a {
-  color: #00B7FF;
+#nav {
+	width: 250px;
+	float: left;
+	margin-top: 0px;
+	text-align:left;
+	position:fixed;
+	font-family: Helvetica, sans-serif;
+	background-color: rgba(4,64,133,0.5);
+	border-radius: 10px;
+	padding: 10px;
+	margin-right: 1em;
+}
+
+#nav ul, #nav li {
+	margin:2px 0 2px 0;
+	padding:0;
+	list-style:none;
+}
+
+#nav a {
+	display: block;
+	padding: 4px 0 4px 20px;
+	color: #044085;
+	background-color: #DEEDFA;
+	text-decoration: none;
+	border-radius: 1em;
+}
+
+#nav a:hover {
+	color: #044085;
+	background-color:#C3DCF7;
+	font-weight: bold;
+}
+
+#section{
+	margin-left: 285px;
+	margin-top: 0px;
 }
