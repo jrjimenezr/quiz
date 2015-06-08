@@ -16,7 +16,24 @@ h2 {
   text-algin: center;
 }
 
-.caja {
+.boton, .caja_texto {
+  text-align: center;
+  margin: auto;
+  background-color: rgba(4, 64, 133, 0.8);
+  color: #F3D8FA;
+  border: 0.1em solid #F3D8FA;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background-color: rgba(4 , 64, 133, 0.3);
+  color: #044085;
+  border: 0.1em solid #044085;
+}
+
+.caja  {
   background-color: #F3D8FA;
   color: #491057;
   border: 0.1em solid #491057;
@@ -24,6 +41,24 @@ h2 {
   box-shadow: 0.5em 0.5em 0.5em rgba(73, 16, 87, 0.3);
   padding: 1.5em 2em;
   margin: 1em;
+  text-align: center;
+}
+
+.pregunta, .respuesta {
+  background-color: #DEEDFA;
+  color: #044085;
+  border: 0.1em solid #044085;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em 0.5em rgba(4 , 64, 133, 0.3);
+  padding: 1.5em 2em;
+  margin: 1em;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+}
+
+.contenedor_centrado {
+  text-align: center;
 }
 
 a {
