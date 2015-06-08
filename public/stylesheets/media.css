@@ -1,0 +1,26 @@
+#nav {
+	background-color: rgba(4,64,133,0.5);
+	border-radius: 10px;
+	width:100%;
+	list-style:none;
+	padding:0;
+	line-height:1.2em;
+  margin-bottom: 1em;
+}
+#nav ul {
+	float:left;
+	width:100%;
+	padding: 10px;
+}
+#nav a {
+	display:block;
+	padding:0.4em 1.2em;
+}
+#nav li {
+	float:left;
+	margin-left:0.5em;
+}
+#section{
+	margin: 0em;
+  clear: both;
+}
