@@ -61,6 +61,10 @@ h2 {
   text-align: center;
 }
 
+img {
+  max-width: 100%;
+}
+
 #nav {
 	width: 250px;
 	float: left;
