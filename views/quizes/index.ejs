@@ -6,5 +6,9 @@
         <li><a class="boton" href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></li>
       <% } %>
     </ul>
+    <form method="get" action="/quizes">
+      <p>Filtrar preguntas por: <input type="text" name="search" class="caja_texto"/></p>
+      <input type="submit" value="Filtrar" class="boton"/>
+    </form>
   </div>
 </div>
