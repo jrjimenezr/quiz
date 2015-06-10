@@ -8,9 +8,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
-//GET para answer y question
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
+//GET para la ruta /quizes
+router.get('/quizes', quizController.index);
+router.get('/quizes/:quizId(\\d+)', quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 //GET para los creditos
 router.get('/author', function(req, res) {

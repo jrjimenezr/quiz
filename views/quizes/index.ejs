@@ -1,0 +1,10 @@
+<div class="contenedor_centrado">
+  <div class="lista_preguntas">
+    <h2>Elige la pregunta</h2>
+    <ul>
+      <% var i; for (i=0; i<quizes.length; i++) { %>
+        <li><a class="boton" href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>

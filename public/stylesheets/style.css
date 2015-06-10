@@ -44,7 +44,7 @@ h2 {
   text-align: center;
 }
 
-.pregunta, .respuesta {
+.pregunta, .respuesta, .lista_preguntas {
   background-color: #DEEDFA;
   color: #044085;
   border: 0.1em solid #044085;
@@ -59,6 +59,15 @@ h2 {
 
 .contenedor_centrado {
   text-align: center;
+}
+
+.lista_preguntas ul {
+  list-style: none;
+  list-style-position: inside;
+  padding-left: 0em;
+}
+.lista_preguntas li {
+  margin: 1.5em;
 }
 
 img {

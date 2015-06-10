@@ -1,7 +1,7 @@
 <div class="contenedor_centrado">
-  <form method="get" action="/quizes/answer" class="pregunta">
+  <form method="get" action="/quizes/<%= quiz.id %>/answer" class="pregunta">
     <h2>Pregunta</h2>
-    <p><%= pregunta %>
+    <p><%= quiz.pregunta %>
       <input type="text" name="respuesta" value="Responda aquí" class="caja_texto" />
     </p>
     <input type="submit" value="Enviar" class="boton" />
