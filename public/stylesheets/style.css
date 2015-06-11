@@ -70,6 +70,20 @@ h2 {
 .lista_preguntas li {
   margin: 1.5em;
 }
+.error
+{
+  border: 0.1em dashed #4E4E4E;
+  border-radius: 0.5em;
+  color: #4E4E4E;
+  background-color: #F8F8FF;
+  padding: 0.5em 1.5em;
+  margin: 0.5em;
+  text-align: left;
+}
+.error h3 {
+  text-align: center;
+  color: red;
+}
 
 img {
   max-width: 100%;

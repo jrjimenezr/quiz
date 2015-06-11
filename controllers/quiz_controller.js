@@ -20,7 +20,8 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
   var busqueda = req.query.search || '';
   busqueda = '%' + busqueda.replace(/\s/g, '%') + '%';
-  models.Quiz.findAll({where: ["pregunta like ?", busqueda]}).then(function(quizes) {
+  busqueda = busqueda.toUpperCase();
+  models.Quiz.findAll({where: ["upper(pregunta) like ?", busqueda], order: ["pregunta"]}).then(function(quizes) {
     res.render('quizes/index', { quizes: quizes });
   });
 };
@@ -47,14 +48,26 @@ exports.new = function(req, res) {
   var quiz = models.Quiz.build(
     {pregunta: "Pregunta", respuesta: "Respuesta"}
   );
-  res.render('quizes/new', {quiz: quiz});
-}
+  res.render('quizes/new', {quiz: quiz, errors: {}});
+};
 
 //POST /quizes/create
 exports.create = function(req, res) {
   var quiz = models.Quiz.build(req.body.quiz);
   //Guardamos en la BD los campos pregunta y respuesta
+  /*quiz.validate().then(function(err) {
+    if (err) {
+      res.render('quizes/new', {quiz: quiz, errors: err.errors});
+    }
+    else {
+      quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
+        res.redirect('/quizes');
+      });
+    }
+  });*/
   quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
     res.redirect('/quizes');
-  })
+  }).catch(function(err) {
+    res.render('quizes/new', {quiz: quiz, errors: err});
+  });
 };

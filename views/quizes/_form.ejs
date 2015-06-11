@@ -1,10 +1,20 @@
+<% if (Object.keys(errors).length) { %>
+  <div class="error">
+    <h3>Debes corregir los siguientes errores</h3>
+    <ul>
+    <% for (var i in errors) { %>
+      <li> <%- errors[i] %> </li>
+    <% } %>
+    </ul>
+  </div>
+<% } %>
 <p>
   <label for="preg">Pregunta: </label>
-  <input type="text" id="preg" class="caja_texto" name="quiz[pregunta]" value="<%= quiz.pregunta %>""/>
+  <input type="text" id="preg" class="caja_texto" name="quiz[pregunta]" placeholder="<%= quiz.pregunta %>""/>
 </p>
 <p>
   <label for="resp">Respuesta: </label>
-  <input type="text" id="resp" class="caja_texto" name="quiz[respuesta]" value="<%= quiz.respuesta %>""/>
+  <input type="text" id="resp" class="caja_texto" name="quiz[respuesta]" placeholder="<%= quiz.respuesta %>""/>
 </p>
 <p>
   <a href="/quizes" class="boton">Cancelar</a>
