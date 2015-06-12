@@ -16,7 +16,19 @@ h2 {
   text-algin: center;
 }
 
-.boton, .caja_texto {
+.caja_texto {
+  text-align: center;
+  margin: auto;
+  background-color: rgba(4, 64, 133, 0.1);
+  color: #044085;
+  border: 0.1em solid #044085;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+.boton {
   text-align: center;
   margin: auto;
   background-color: rgba(4, 64, 133, 0.8);
@@ -83,6 +95,35 @@ h2 {
 .error h3 {
   text-align: center;
   color: red;
+}
+
+.anadir {
+	padding-left: 2em;
+	background: url("/images/icono_anadir.png") no-repeat 3px 3px rgba(4, 64, 133, 0.8);
+}
+.buscar {
+	padding-left: 2em;
+	background: url("/images/icono_buscar.png") no-repeat 3px 3px rgba(4, 64, 133, 0.8);
+}
+.editar {
+	padding:4px 10px;
+	background: url("/images/icono_editar.png") no-repeat 3px 3px;
+}
+.form_borrar {
+  display: inline;
+}
+.borrar {
+  padding: 1px 15px;
+  vertical-align: middle;
+  width: 40px;
+  height: 22px;
+  border: none;
+  background: url("/images/icono_borrar.png") no-repeat -5px 0px;
+  cursor: pointer;
+}
+.borrar:focus:active, .borrar:focus {
+  border: none;
+  outline: none;
 }
 
 img {

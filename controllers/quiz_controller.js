@@ -28,9 +28,7 @@ exports.index = function(req, res) {
 
 //GET /quizes/:id
 exports.show = function(req, res) {
-  models.Quiz.find(req.params.quizId).then(function(quiz){
-    res.render('quizes/show', { quiz: req.quiz});
-  });
+  res.render('quizes/show', { quiz: req.quiz});
 };
 
 //GET /quizes/:id/answer
@@ -46,7 +44,7 @@ exports.answer = function(req, res) {
 //GET /quizes/new
 exports.new = function(req, res) {
   var quiz = models.Quiz.build(
-    {pregunta: "Pregunta", respuesta: "Respuesta"}
+    {pregunta: "Pregunta", respuesta: "Respuesta", tematica: "Otra"}
   );
   res.render('quizes/new', {quiz: quiz, errors: {}});
 };
@@ -55,19 +53,34 @@ exports.new = function(req, res) {
 exports.create = function(req, res) {
   var quiz = models.Quiz.build(req.body.quiz);
   //Guardamos en la BD los campos pregunta y respuesta
-  /*quiz.validate().then(function(err) {
-    if (err) {
-      res.render('quizes/new', {quiz: quiz, errors: err.errors});
-    }
-    else {
-      quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
-        res.redirect('/quizes');
-      });
-    }
-  });*/
-  quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
+  quiz.save({fields: ["pregunta", "respuesta", "tematica"]}).then(function(){
     res.redirect('/quizes');
   }).catch(function(err) {
     res.render('quizes/new', {quiz: quiz, errors: err});
   });
 };
+
+//GET /quizes/:id/edit
+exports.edit = function(req, res) {
+  res.render('quizes/edit', { quiz: req.quiz, errors: {}});
+}
+
+//PUT /quizes/:id
+exports.update = function(req, res) {
+  req.quiz.pregunta = req.body.quiz.pregunta;
+  req.quiz.respuesta = req.body.quiz.respuesta;
+  req.quiz.tematica = req.body.quiz.tematica;
+  //Guardamos en la BD los campos pregunta y respuesta
+  req.quiz.save({fields: ["pregunta", "respuesta", "tematica"]}).then(function(){
+    res.redirect('/quizes');
+  }).catch(function(err) {
+    res.render('quizes/edit', {quiz: req.quiz, errors: err});
+  });
+};
+
+//DELETE /quizes/:id
+exports.destroy = function(req, res) {
+  req.quiz.destroy().then( function() {
+    res.redirect('/quizes');
+  }).catch(function(error) {next(error)});
+}

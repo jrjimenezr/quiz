@@ -10,6 +10,10 @@ module.exports = function(sequelize, DataTypes) {
       respuesta: {
         type: DataTypes.STRING,
         validate: { notEmpty: {msg: "La <strong>respuesta</strong> no puede estar vacía"}}
+      },
+      tematica: {
+        type: DataTypes.STRING,
+        validate: { isIn: [['Humanidades', 'Ocio', 'Ciencia', 'Tecnología', 'Otra']] }
       }
     });
 }

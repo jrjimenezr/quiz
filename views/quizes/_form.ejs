@@ -7,14 +7,27 @@
     <% } %>
     </ul>
   </div>
-<% } %>
+<% };
+  var atributo = "value";
+  if (quiz.pregunta === "Pregunta") atributo="placeholder";
+  %>
 <p>
   <label for="preg">Pregunta: </label>
-  <input type="text" id="preg" class="caja_texto" name="quiz[pregunta]" placeholder="<%= quiz.pregunta %>""/>
+  <input type="text" id="preg" class="caja_texto" name="quiz[pregunta]" <%= atributo %> ="<%= quiz.pregunta %>""/>
 </p>
 <p>
   <label for="resp">Respuesta: </label>
-  <input type="text" id="resp" class="caja_texto" name="quiz[respuesta]" placeholder="<%= quiz.respuesta %>""/>
+  <input type="text" id="resp" class="caja_texto" name="quiz[respuesta]" <%= atributo %> ="<%= quiz.respuesta %>""/>
+</p>
+<p>
+  <label for="tematica">Temática: </label>
+  <select id="tematica" class="caja_texto" name="quiz[tematica]">
+    <option value="Otra" <%= quiz.tematica === "Otra" ? "selected" : ""  %> >Otra</option>
+    <option value="Humanidades" <%= quiz.tematica === "Humanidades" ? "selected" : ""  %> >Humanidades</option>
+    <option value="Ocio" <%= quiz.tematica === "Ocio" ? "selected" : ""  %> >Ocio</option>
+    <option value="Ciencia" <%= quiz.tematica === "Ciencia" ? "selected" : ""  %> >Ciencia</option>
+    <option value="Tecnología" <%= quiz.tematica === "Tecnología" ? "selected" : ""  %>>Tecnología</option>
+  </select>
 </p>
 <p>
   <a href="/quizes" class="boton">Cancelar</a>
