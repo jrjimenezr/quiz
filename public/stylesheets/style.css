@@ -114,6 +114,19 @@ h3 {
 	padding:4px 10px;
 	background: url("/images/icono_editar.png") no-repeat 3px 3px;
 }
+.login {
+  font-size: 0em;
+	padding:28px 25px;
+	background: url("/images/icono_login.png") no-repeat 3px 3px;
+}
+.logout {
+  font-size: 0em;
+	padding:28px 25px;
+	background: url("/images/icono_logout.png") no-repeat 3px 3px;
+}
+.derecha {
+  float: right;
+}
 .form_borrar {
   display: inline;
 }

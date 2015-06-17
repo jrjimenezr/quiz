@@ -11,6 +11,11 @@
   <body>
     <header id="header">
       <div class="caja">
+        <% if (!session.user) { %>
+          <span class="derecha"><a href="/login" class="login" title="Login">Login </a></span>
+        <% } else { %>
+          <span class="derecha"> <%=session.user.username %><a href="/logout" class="logout" title="Logout">Logout</a></span>
+        <% } %>
         <h1>Quiz: el juego de las preguntas</h1>
       </div>
     </header>
