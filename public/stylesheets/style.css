@@ -130,6 +130,11 @@ h3 {
 	padding:28px 25px;
 	background: url("/images/icono_logout.png") no-repeat 3px 3px;
 }
+.publicar {
+  font-size: 0em;
+	padding:20px 25px;
+	background: url("/images/icono_publicar.png") no-repeat 3px 3px;
+}
 .derecha {
   float: right;
 }
