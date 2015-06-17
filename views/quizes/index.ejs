@@ -5,11 +5,13 @@
       <% var i; for (i=0; i<quizes.length; i++) { %>
         <li>
           <a class="boton" href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
-          <a class="editar" title="Editar" href="quizes/<%= quizes[i].id %>/edit"></a>
-          <form class="form_borrar" method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-            <button type="submit" class="borrar" title="Borrar"
-              onClick="return confirm('Realmente desea borrar la pregunta: <%= quizes[i].pregunta %>');" />
-          </form>
+          <% if (session.user) { %>
+            <a class="editar" title="Editar" href="quizes/<%= quizes[i].id %>/edit"></a>
+            <form class="form_borrar" method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+              <button type="submit" class="borrar" title="Borrar"
+                onClick="return confirm('Realmente desea borrar la pregunta: <%= quizes[i].pregunta %>');" />
+            </form>
+          <% } %>
         </li>
       <% } %>
     </ul>
@@ -17,9 +19,11 @@
       <p>Filtrar preguntas por: <input type="text" name="search" class="caja_texto"/>
       <input type="submit" value="Filtrar" class="boton buscar"/></p>
     </form>
-    <br />
-    <p>
-      <a href="/quizes/new" class="boton anadir">Crear pregunta</a>
-    </p>
+    <% if (session.user) { %>
+      <br />
+      <p>
+        <a href="/quizes/new" class="boton anadir">Crear pregunta</a>
+      </p>
+    <% } %>
   </div>
 </div>

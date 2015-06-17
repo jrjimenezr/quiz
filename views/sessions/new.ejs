@@ -1,6 +1,11 @@
 <div class="contenedor_centrado">
-  <div class="pregunta">
-    <h2>Añadir pregunta</h2>
+  <div class="autenticacion">
+    <h2>Login</h2>
+    <% if (Object.keys(errors).length) { %>
+      <div class="error">
+        <h3><%- errors.message %></h3><br/>
+      </div>
+    <% }; %>
     <form method="post" action="/login" >
       <p>
         <label for="login">Usuario</label>
@@ -10,7 +15,7 @@
         <label for="password">Contraseña</label>
         <input type="password" id="password" name="password" class="caja_texto" />
       </p>
-      <p><input name="commit" type="submit" value="Login" class="boton"/> </p>
+      <input name="commit" type="submit" value="Login" class="boton"/>
     </form>
   </div>
 </div>

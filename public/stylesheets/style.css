@@ -9,6 +9,7 @@ body {
 
 h1 {
   text-align: center;
+  display: inline;
 }
 
 h2 {
@@ -62,7 +63,7 @@ h3 {
   text-align: center;
 }
 
-.pregunta, .respuesta, .lista_preguntas {
+.pregunta, .respuesta, .lista_preguntas, .autenticacion {
   background-color: #DEEDFA;
   color: #044085;
   border: 0.1em solid #044085;
@@ -73,6 +74,10 @@ h3 {
   text-align: center;
   width: auto;
   display: inline-block;
+}
+
+.autenticacion form p {
+  text-align: right;
 }
 
 .contenedor_centrado {
@@ -86,6 +91,7 @@ h3 {
 }
 .lista_preguntas li {
   margin: 1.5em;
+  list-style: none !important;
 }
 .error
 {
